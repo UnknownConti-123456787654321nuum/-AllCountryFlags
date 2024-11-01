@@ -1,4 +1,40 @@
 <head>
+         <script>
+        const konamiCode = [
+            'ArrowUp', 'ArrowUp',
+            'ArrowDown', 'ArrowDown',
+            'ArrowLeft', 'ArrowRight',
+            'ArrowLeft', 'ArrowRight',
+            'b', 'a'
+        ];
+
+        let currentIndex = 0;
+
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+
+            if (key === konamiCode[currentIndex]) {
+                currentIndex++;
+                if (currentIndex === konamiCode.length) {
+                    // If the full code is entered, trigger the secret function
+                    activateSecret();
+                    currentIndex = 0; // Reset index
+                }
+            } else {
+                currentIndex = 0; // Reset if the sequence is broken
+            }
+        });
+
+        function activateSecret() {
+            alert('Konami Code Activated! Welcome to the secret section!');
+            document.getElementById('secret').scrollIntoView({ behavior: 'smooth' });
+
+            // Fade out the image
+            const image = document.getElementById('fadeImage');
+            image.style.opacity = '0';
+            image.style.transition = 'opacity 1s ease-out';
+        }
+    </script>
 <!-- Adsense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8024356722027062"
      crossorigin="anonymous"></script>
