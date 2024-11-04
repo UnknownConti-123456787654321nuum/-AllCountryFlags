@@ -47,7 +47,9 @@
             Module: {
                 onRuntimeInitialized: function() {
                     UnityProgress(gameInstance, "complete");
-                    document.getElementById('gameContainer').focus(); // Ensure the game can receive input
+                    setTimeout(() => {
+                        document.getElementById('gameContainer').focus(); // Ensure the game can receive input
+                    }, 100); // Delay for focus
                 }
             }
         });
