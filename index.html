@@ -53,9 +53,28 @@
         });
     </script>
     <style>
-        body { margin: 0; overflow: hidden; }
-        #gameContainer { width: 100%; height: 100%; }
-        #fullScreenImage { width: 100%; height: 100vh; object-fit: cover; transition: opacity 1s ease-out; position: fixed; top: 0; left: 0; z-index: 1; }
+        html, body {
+            height: 100%; /* Ensure full height */
+            margin: 0;    /* Remove default margin */
+            padding: 0;   /* Remove default padding */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        #gameContainer {
+            width: 100%; 
+            height: 100vh; /* Full viewport height */
+        }
+
+        #fullScreenImage {
+            width: 100%; 
+            height: 100vh; 
+            object-fit: cover; 
+            transition: opacity 1s ease-out; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            z-index: 1; 
+        }
     </style>
 </head>
 
