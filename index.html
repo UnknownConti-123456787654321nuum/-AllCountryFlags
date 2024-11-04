@@ -47,6 +47,7 @@
             Module: {
                 onRuntimeInitialized: function() {
                     UnityProgress(gameInstance, "complete");
+                    document.getElementById('gameContainer').focus(); // Ensure the game can receive input
                 }
             }
         });
@@ -60,7 +61,7 @@
 
 <body>
     <div class="webgl-content">
-        <div id="gameContainer"></div>
+        <div id="gameContainer" tabindex="0"></div> <!-- Add tabindex for focusability -->
     </div>
 
     <img id="fullScreenImage" src="flags.jpg" alt="Full Screen Image">
